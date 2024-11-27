@@ -12,8 +12,8 @@
 		C5D30FE12CF67D80007E2BE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FD82CF67D80007E2BE3 /* ContentView.swift */; };
 		C5D30FE22CF67D80007E2BE3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FDA2CF67D80007E2BE3 /* Item.swift */; };
 		C5D30FE32CF67D80007E2BE3 /* TestDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FDC2CF67D80007E2BE3 /* TestDataApp.swift */; };
-		C5D30FE52CF6919B007E2BE3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FE42CF6919B007E2BE3 /* DataManager.swift */; };
 		C5D30FE72CF691B4007E2BE3 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FE62CF691B4007E2BE3 /* ContentViewModel.swift */; };
+		C5D30FEB2CF76E84007E2BE3 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FEA2CF76E84007E2BE3 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +25,8 @@
 		C5D30FDA2CF67D80007E2BE3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C5D30FDB2CF67D80007E2BE3 /* TestData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestData.entitlements; sourceTree = "<group>"; };
 		C5D30FDC2CF67D80007E2BE3 /* TestDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataApp.swift; sourceTree = "<group>"; };
-		C5D30FE42CF6919B007E2BE3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C5D30FE62CF691B4007E2BE3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		C5D30FEA2CF76E84007E2BE3 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +68,9 @@
 			isa = PBXGroup;
 			children = (
 				C5D30FDC2CF67D80007E2BE3 /* TestDataApp.swift */,
+				C5D30FEA2CF76E84007E2BE3 /* DataSource.swift */,
 				C5D30FD82CF67D80007E2BE3 /* ContentView.swift */,
 				C5D30FE62CF691B4007E2BE3 /* ContentViewModel.swift */,
-				C5D30FE42CF6919B007E2BE3 /* DataManager.swift */,
 				C5D30FDA2CF67D80007E2BE3 /* Item.swift */,
 				C5D30FDB2CF67D80007E2BE3 /* TestData.entitlements */,
 				C5D30FD92CF67D80007E2BE3 /* Info.plist */,
@@ -153,8 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D30FEB2CF76E84007E2BE3 /* DataSource.swift in Sources */,
 				C5D30FE12CF67D80007E2BE3 /* ContentView.swift in Sources */,
-				C5D30FE52CF6919B007E2BE3 /* DataManager.swift in Sources */,
 				C5D30FE22CF67D80007E2BE3 /* Item.swift in Sources */,
 				C5D30FE32CF67D80007E2BE3 /* TestDataApp.swift in Sources */,
 				C5D30FE72CF691B4007E2BE3 /* ContentViewModel.swift in Sources */,

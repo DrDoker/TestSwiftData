@@ -6,36 +6,32 @@
 //
 
 import SwiftUI
-import SwiftData
 
-final class ContentViewModel: ObservableObject {
-    private let dataManager: DataManager
-    @Published var items: [Item] = []
-    
-    init(modelContext: ModelContext) {
-        self.dataManager = DataManager(modelContext: modelContext)
-        fetchItems()
+@MainActor
+@Observable
+final class ContentViewModel {
+    private let dataSource: DataSource = DataSource.shared
+    var items: [Item] = []
+
+    init() {
+        loadItems()
     }
-    
-    func fetchItems() {
-        items = dataManager.fetchItems()
+
+    func loadItems() {
+        items = dataSource.fetchItems()
     }
-    
+
     func addItem() {
         let newItem = Item(timestamp: Date())
-        dataManager.save(newItem)
-        fetchItems()
+        dataSource.addItem(newItem)
+        loadItems()
     }
-    
+
     func deleteItems(at offsets: IndexSet) {
         for index in offsets {
             let item = items[index]
-            dataManager.delete(item)
+            dataSource.deleteItem(item)
         }
-        fetchItems()
-    }
-    
-    func syncCloudKit() {
-        dataManager.syncWithCloudKit()
+        loadItems()
     }
 }

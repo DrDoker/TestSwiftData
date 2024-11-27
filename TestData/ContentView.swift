@@ -6,30 +6,21 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @StateObject private var viewModel: ContentViewModel
-    
-    init(modelContext: ModelContext) {
-        _viewModel = StateObject(wrappedValue: ContentViewModel(modelContext: modelContext))
-    }
-    
+    @State private var viewModel = ContentViewModel()
+
     var body: some View {
         NavigationSplitView {
             List {
                 ForEach(viewModel.items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                    NavigationLink(destination: Text("Item at \(item.timestamp, format: .dateTime)")) {
+                        Text(item.timestamp, format: .dateTime)
                     }
                 }
-                .onDelete(perform: viewModel.deleteItems)
-
-            }
-            .refreshable {
-                viewModel.fetchItems()
+                .onDelete { offsets in
+                    viewModel.deleteItems(at: offsets)
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -41,21 +32,11 @@ struct ContentView: View {
                     }
                 }
             }
+            .refreshable {
+                viewModel.loadItems()
+            }
         } detail: {
             Text("Select an item")
         }
-        .onAppear {
-            viewModel.syncCloudKit()
-        }
     }
-}
-
-#Preview {
-    let schema = Schema([
-        Item.self,
-    ])
-    let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
-    let modelContainer = try! ModelContainer(for: schema, configurations: [configuration])
-    ContentView(modelContext: modelContainer.mainContext)
-        .modelContainer(modelContainer)
 }
