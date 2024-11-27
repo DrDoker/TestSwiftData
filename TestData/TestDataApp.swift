@@ -1,8 +1,8 @@
 //
-//  TestDataApp.swift
+//  TestDataApp 2.swift
 //  TestData
 //
-//  Created by Serhii on 26.11.2024.
+//  Created by Serhii on 27.11.2024.
 //
 
 import SwiftUI
@@ -12,9 +12,12 @@ import SwiftData
 struct TestDataApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Item.self
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let modelConfiguration = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false
+        )
 
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
@@ -25,7 +28,7 @@ struct TestDataApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(modelContext: sharedModelContainer.mainContext)
         }
         .modelContainer(sharedModelContainer)
     }
