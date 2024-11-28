@@ -6,30 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C5D30FDE2CF67D80007E2BE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D30FD52CF67D80007E2BE3 /* Preview Assets.xcassets */; };
+		C5D30FDF2CF67D80007E2BE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D30FD72CF67D80007E2BE3 /* Assets.xcassets */; };
+		C5D30FE12CF67D80007E2BE3 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FD82CF67D80007E2BE3 /* FirstView.swift */; };
+		C5D30FE22CF67D80007E2BE3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FDA2CF67D80007E2BE3 /* Item.swift */; };
+		C5D30FE32CF67D80007E2BE3 /* TestDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FDC2CF67D80007E2BE3 /* TestDataApp.swift */; };
+		C5D30FE52CF6919B007E2BE3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FE42CF6919B007E2BE3 /* DataManager.swift */; };
+		C5D30FE72CF691B4007E2BE3 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30FE62CF691B4007E2BE3 /* FirstViewModel.swift */; };
+		C5D310112CF807A0007E2BE3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D310102CF807A0007E2BE3 /* MainView.swift */; };
+		C5D310132CF807DD007E2BE3 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D310122CF807DD007E2BE3 /* SecondView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		C5D30FBF2CF67D6C007E2BE3 /* TestData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5D30FD52CF67D80007E2BE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5D30FD72CF67D80007E2BE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5D30FD82CF67D80007E2BE3 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		C5D30FD92CF67D80007E2BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5D30FDA2CF67D80007E2BE3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C5D30FDB2CF67D80007E2BE3 /* TestData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestData.entitlements; sourceTree = "<group>"; };
+		C5D30FDC2CF67D80007E2BE3 /* TestDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataApp.swift; sourceTree = "<group>"; };
+		C5D30FE42CF6919B007E2BE3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C5D30FE62CF691B4007E2BE3 /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
+		C5D310102CF807A0007E2BE3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C5D310122CF807DD007E2BE3 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C5D30FCF2CF67D6D007E2BE3 /* Exceptions for "TestData" folder in "TestData" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = C5D30FBE2CF67D6C007E2BE3 /* TestData */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C5D30FC12CF67D6C007E2BE3 /* TestData */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C5D30FCF2CF67D6D007E2BE3 /* Exceptions for "TestData" folder in "TestData" target */,
-			);
-			path = TestData;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C5D30FBC2CF67D6C007E2BE3 /* Frameworks */ = {
@@ -45,7 +47,7 @@
 		C5D30FB62CF67D6C007E2BE3 = {
 			isa = PBXGroup;
 			children = (
-				C5D30FC12CF67D6C007E2BE3 /* TestData */,
+				C5D30FDD2CF67D80007E2BE3 /* TestData */,
 				C5D30FC02CF67D6C007E2BE3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +58,48 @@
 				C5D30FBF2CF67D6C007E2BE3 /* TestData.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C5D30FD62CF67D80007E2BE3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C5D30FD52CF67D80007E2BE3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C5D30FDD2CF67D80007E2BE3 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				C5D30FDC2CF67D80007E2BE3 /* TestDataApp.swift */,
+				C5D310102CF807A0007E2BE3 /* MainView.swift */,
+				C5D310142CF808AC007E2BE3 /* First */,
+				C5D310152CF808C9007E2BE3 /* Second */,
+				C5D30FE42CF6919B007E2BE3 /* DataManager.swift */,
+				C5D30FDA2CF67D80007E2BE3 /* Item.swift */,
+				C5D30FDB2CF67D80007E2BE3 /* TestData.entitlements */,
+				C5D30FD92CF67D80007E2BE3 /* Info.plist */,
+				C5D30FD72CF67D80007E2BE3 /* Assets.xcassets */,
+				C5D30FD62CF67D80007E2BE3 /* Preview Content */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		C5D310142CF808AC007E2BE3 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				C5D30FD82CF67D80007E2BE3 /* FirstView.swift */,
+				C5D30FE62CF691B4007E2BE3 /* FirstViewModel.swift */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
+		C5D310152CF808C9007E2BE3 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				C5D310122CF807DD007E2BE3 /* SecondView.swift */,
+			);
+			path = Second;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +116,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C5D30FC12CF67D6C007E2BE3 /* TestData */,
 			);
 			name = TestData;
 			packageProductDependencies = (
@@ -122,6 +163,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D30FDE2CF67D80007E2BE3 /* Preview Assets.xcassets in Resources */,
+				C5D30FDF2CF67D80007E2BE3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D310132CF807DD007E2BE3 /* SecondView.swift in Sources */,
+				C5D30FE12CF67D80007E2BE3 /* FirstView.swift in Sources */,
+				C5D310112CF807A0007E2BE3 /* MainView.swift in Sources */,
+				C5D30FE52CF6919B007E2BE3 /* DataManager.swift in Sources */,
+				C5D30FE22CF67D80007E2BE3 /* Item.swift in Sources */,
+				C5D30FE32CF67D80007E2BE3 /* TestDataApp.swift in Sources */,
+				C5D30FE72CF691B4007E2BE3 /* FirstViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

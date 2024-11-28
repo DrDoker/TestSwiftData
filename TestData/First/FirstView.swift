@@ -8,28 +8,36 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+struct FirstView: View {
+    @StateObject private var viewModel: FirstViewModel
+    
+    init(modelContext: ModelContext) {
+        let viewModel = FirstViewModel(modelContext: modelContext)
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(viewModel.items) { item in
                     NavigationLink {
                         Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
                     } label: {
                         Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: viewModel.deleteItems)
+
+            }
+            .refreshable {
+                viewModel.fetchItems()
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: viewModel.addItem) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
@@ -37,25 +45,18 @@ struct ContentView: View {
         } detail: {
             Text("Select an item")
         }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
+        .onAppear {
+            viewModel.syncCloudKit()
         }
     }
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+    let schema = Schema([
+        Item.self,
+    ])
+    let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+    let modelContainer = try! ModelContainer(for: schema, configurations: [configuration])
+    FirstView(modelContext: modelContainer.mainContext)
+        .modelContainer(modelContainer)
 }
